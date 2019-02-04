@@ -1,21 +1,14 @@
-<form class="needs-validation w-50 mx-auto mt-5 p-5" validate>
-  <div class="mt-3">
-      <input type="text" class="form-control" placeholder="First name" name="name" required>
-  </div>
-  <div class="mt-3">
-      <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="email" required>
-  </div>
-  <div class="mt-3">
-      <input type="tel" class="form-control" id="inputTel" placeholder="77788898 or 37477788898" name="tel" minlength="8" maxlength="11" required>
-      <!-- <input type="phone" class="form-control" placeholder="Phone" aria-label="phone" aria-describedby="basic-addon2" required> -->
-      <!-- <input name="phone" class="form-control" id="inputPhone" type="text" placeholder="Phone" required> -->
-  </div>
-  <div class="mt-3">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" required
-          minlength="8" maxlength="17">
-  </div>
-
-  <button type="submit" class="btn btn-primary mt-3">Register</button>
-</form>
-
-
+<div class="container d-flex justify-content-center mx-auto my-auto">
+    <form class="mx-auto mt-5 p-5  mx-auto my-auto" validate>
+        <div class="mt-3">
+            <input type="text" class="form-control" placeholder="Your phone or email" minlength="8" required>
+        </div>
+        <div class="mt-3">
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password"
+                required minlength="8" maxlength="17">
+        </div>
+        <!-- <button type="button" class="btn btn-lg btn-primary mt-3">Sign in</button> -->
+        <a routerLink="home" class="btn btn-primary btn-lg active mt-3" role="button" aria-pressed="true">Sign in</a>
+        <a routerLink="registration" class="btn btn-secondary btn-lg active mt-3" role="button" aria-pressed="true">Sign up</a>
+    </form>
+</div>

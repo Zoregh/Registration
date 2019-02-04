@@ -1,3 +1,35 @@
-<p>
-  registration works!
-</p>
+<form #MyForm="ngForm" class="needs-validation w-50 mx-auto mt-5 p-5" (ngSubmit)="MyForm.form.valid && submit(MyForm)" autocomplete="off">
+  <div class="mt-3">
+      <div class="from-group">
+        <input type="text" ngModel #name="ngModel" class="form-control" placeholder="First name" name="name" minlength="3" required>
+        <span [hidden]="name.pristine || name.valid">
+        Please input correct Name!
+        </span>
+      </div>
+  </div>
+  <div class="mt-3">
+      <div class="from-group">
+        <input type="email" name="email" ngModel #email="ngModel" class="form-control" placeholder="Email" [pattern]="emailRegex" required>
+        <span [hidden]="email.pristine || email.valid">
+          Please input correct Email!
+        </span>
+      </div>
+  </div>
+  <div class="mt-3">
+    <div class="from-group">
+      <input type="tel" ngModel #phone="ngModel" class="form-control" placeholder="374xxxxxxxx" name="phone" maxlength="11" [pattern]="phoneRegex" required>
+      <span [hidden]="phone.pristine || phone.valid">
+        Please input correct Phone!
+      </span>
+    </div>
+  </div>
+  <div class="mt-3">
+      <div class="from-group">
+        <input type="password" ngModel #password="ngModel" class="form-control" placeholder="Password" name="password" required minlength="8" maxlength="17">
+        <span [hidden]="password.pristine || password.valid">
+            Please input correct Password!
+          </span>
+      </div>
+  </div>
+  <button type="submit" [disabled]="MyForm.form.invalid" class="btn btn-primary mt-3">Register</button>
+</form>
