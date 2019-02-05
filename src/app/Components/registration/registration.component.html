@@ -9,7 +9,7 @@
   </div>
   <div class="mt-3">
       <div class="from-group">
-        <input type="email" name="email" ngModel #email="ngModel" class="form-control" placeholder="Email" [pattern]="emailRegex" required>
+        <input type="email" name="email" ngModel #email="ngModel" class="form-control" placeholder="Email" [pattern]="emailRegex">
         <span [hidden]="email.pristine || email.valid">
           Please input correct Email!
         </span>
@@ -17,7 +17,7 @@
   </div>
   <div class="mt-3">
     <div class="from-group">
-      <input type="tel" ngModel #phone="ngModel" class="form-control" placeholder="374xxxxxxxx" name="phone" maxlength="11" [pattern]="phoneRegex" required>
+      <input type="tel" ngModel #phone="ngModel" class="form-control" placeholder="374xxxxxxxx" name="phone" maxlength="11" [pattern]="phoneRegex">
       <span [hidden]="phone.pristine || phone.valid">
         Please input correct Phone!
       </span>

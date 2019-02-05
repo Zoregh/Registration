@@ -26,11 +26,14 @@ export class RegistrationComponent implements OnInit {
     this.user.email = MyForm.value.email;
     this.user.phone = MyForm.value.phone;
     this.user.password = MyForm.value.password;
-    // if (!this.user.checkFields()) {
-    //   alert("please fill Phone or Email fields");
-    //   return;
-    // }
-    this.users.push(this.user);
+    if (!this.user.checkFields()) {
+      alert("please fill Phone or Email fields");
+      return;
+    }
+    if(this.users.map(function(e) { return e.email; }).indexOf(this.user.email) == -1 &&
+    this.users.map(function(e) { return e.phone; }).indexOf(this.user.phone) == -1) {
+        this.users.push(this.user);
+    }
     const jsonedUsers = JSON.stringify(this.users);
     localStorage.setItem('users', jsonedUsers);
 
