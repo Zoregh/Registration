@@ -33,6 +33,10 @@ export class RegistrationComponent implements OnInit {
     if(this.users.map(function(e) { return e.email; }).indexOf(this.user.email) == -1 &&
     this.users.map(function(e) { return e.phone; }).indexOf(this.user.phone) == -1) {
         this.users.push(this.user);
+        alert("Mka du gracvuk es umud jan !")
+    } else {
+      alert("Gya du arden grancvuk es gya!");
+      return;
     }
     const jsonedUsers = JSON.stringify(this.users);
     localStorage.setItem('users', jsonedUsers);
