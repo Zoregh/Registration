@@ -1,14 +1,13 @@
 <div class="container d-flex justify-content-center mx-auto my-auto">
-    <form class="mx-auto mt-5 p-5  mx-auto my-auto" validate>
+    <form class="mx-auto my-auto mt-5 p-5">
         <div class="mt-3">
-            <input type="text" class="form-control" placeholder="Your phone or email" minlength="8" required>
+            <input [(ngModel)]="usrLogin" type="text" name="usrLogin" class="form-control" placeholder="Your phone or email" minlength="8" required>
         </div>
         <div class="mt-3">
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password"
+            <input [(ngModel)]="usrPassword" type="password" name="usrPassword" class="form-control" id="inputPassword" placeholder="Password" name="password"
                 required minlength="8" maxlength="17">
         </div>
-        <!-- <button type="button" class="btn btn-lg btn-primary mt-3">Sign in</button> -->
-        <a routerLink="home" class="btn btn-primary btn-lg active mt-3" role="button" aria-pressed="true">Sign in</a>
+        <button (click)="service.tryLogin(usrLogin, usrPassword)" class="btn btn-primary mt-3">Sign in</button>
         <a routerLink="registration" class="btn btn-secondary btn-lg active mt-3" role="button" aria-pressed="true">Sign up</a>
     </form>
 </div>
