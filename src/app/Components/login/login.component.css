@@ -1,0 +1,9 @@
+.from-group span {
+    color: deeppink;
+}
+.ng-invalid {
+    color: chocolate;
+}
+.ng-valid {
+    color: green;
+}

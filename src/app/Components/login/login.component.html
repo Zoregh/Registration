@@ -1,13 +1,27 @@
 <div class="container d-flex justify-content-center mx-auto my-auto">
-    <form class="mx-auto my-auto mt-5 p-5">
+    <form #authForm="ngForm" class="w-50 mx-auto my-auto p-5" (ngSubmit)="authForm.form.valid && submit(authForm)"
+        autocomplete="off">
         <div class="mt-3">
-            <input [(ngModel)]="usrLogin" type="text" name="usrLogin" class="form-control" placeholder="Your phone or email" minlength="8" required>
+            <div class="from-group">
+                <input type="text" ngModel #login="ngModel" class="form-control" placeholder="Login" name="login"
+                    minlength="11" maxlength="20" required>
+                <span [hidden]="login.pristine || login.valid">
+                    Please input correct login!
+                </span>
+            </div>
         </div>
         <div class="mt-3">
-            <input [(ngModel)]="usrPassword" type="password" name="usrPassword" class="form-control" id="inputPassword" placeholder="Password" name="password"
-                required minlength="8" maxlength="17">
+            <div class="from-group">
+                <input type="password" ngModel #password="ngModel" class="form-control" placeholder="Password" name="password"
+                    required minlength="8" maxlength="17">
+                <span [hidden]="password.pristine || password.valid">
+                    Please input correct Password!
+                </span>
+            </div>
         </div>
-        <button (click)="service.tryLogin(usrLogin, usrPassword)" class="btn btn-primary mt-3">Sign in</button>
-        <a routerLink="registration" class="btn btn-secondary btn-lg active mt-3" role="button" aria-pressed="true">Sign up</a>
+        <button type="submit" [disabled]="authForm.form.invalid" class="btn btn-primary mt-3">Login</button>
+        <a routerLink="registration" class="btn btn-secondary active mt-3 ml-1" role="button" aria-pressed="true">
+            Sign up
+        </a>
     </form>
 </div>
