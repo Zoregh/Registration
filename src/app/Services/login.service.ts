@@ -11,6 +11,7 @@ export class LoginService {
 
   public usrDabro: Boolean = false;
   public storedBase = JSON.parse(localStorage.getItem('users'));
+  public curntUser: any = false;
 
   tryLogin(a,b) {
     const user = this.storedBase.find(u => u.email == a || u.phone == a);
@@ -22,6 +23,7 @@ export class LoginService {
       alert("Wrong password");
       return;
     }
+    this.curntUser = user;
     this.usrDabro = true;
     this.router.navigate(['/home']);
   }
