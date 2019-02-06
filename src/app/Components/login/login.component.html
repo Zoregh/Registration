@@ -4,7 +4,7 @@
         <div class="mt-3">
             <div class="from-group">
                 <input type="text" ngModel #login="ngModel" class="form-control" placeholder="Login" name="login"
-                    minlength="11" maxlength="20" required>
+                    minlength="8" maxlength="32" required>
                 <span [hidden]="login.pristine || login.valid">
                     Please input correct login!
                 </span>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <button type="submit" [disabled]="authForm.form.invalid" class="btn btn-primary mt-3">Login</button>
-        <a routerLink="registration" class="btn btn-secondary active mt-3 ml-1" role="button" aria-pressed="true">
+        <a routerLink="registration" class="btn btn-link mt-3 ml-1" role="button" aria-pressed="true">
             Sign up
         </a>
     </form>

@@ -7,8 +7,6 @@ import { LoginService } from '../../Services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  private login:any;
-  private password:any;
 
   constructor(private service:LoginService) { }
 
@@ -16,9 +14,7 @@ export class LoginComponent implements OnInit {
   }
 
   submit(authForm) {
-    this.login = authForm.value.login;
-    this.password = authForm.value.password;
-    this.service.tryLogin(this.login,this.password);
+    this.service.tryLogin(authForm.value.login,authForm.value.password);
   }
 
 }

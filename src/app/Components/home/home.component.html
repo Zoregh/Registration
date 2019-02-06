@@ -1,1 +1,14 @@
-<h1 class="mx-auto text-center">Hi dear {{curntUser.name}}</h1>>
+<h1 class="mx-auto text-center mt-5">Hi dear {{curntUser.name}}!</h1>>
+<div ng-app ng-controller="curntDate" class="mx-auto w-75 border border-success bg-success rounded">
+  <h3 class="text-start mt-3">You are signed at {{date | date:'dd-MM-yyyy'}} {{date | date:'HH:mm:ss'}}</h3>
+  <hr />
+  <ul>
+    <li>Your email is : {{curntUser.email}}</li>
+    <li>Your phone is : {{curntUser.phone}}</li>
+    <li>Your password is : {{curntUser.password}}</li>
+  </ul>
+  <hr />
+  <div class="d-flex justify-content-center">
+    <button (click)="logOut()" type="button" class="btn btn-danger">Logout</button>
+  </div>
+</div>
